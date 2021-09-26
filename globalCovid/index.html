@@ -20,11 +20,11 @@
 <body>
   <h1>vaccination map</h1>
 
-  <div id="vac_map"></div>
+  <div id="choropleth_map"></div>
   <script type="text/javascript">
 
-    var vg_1 = "Vaccination_map.vg.json";
-    vegaEmbed('#vac_map', vg_1).then(function(result) {
+    var vg_1 = "js/choropleth.vg.json";
+    vegaEmbed('#choropleth_map', vg_1).then(function(result) {
     }).catch(console.error);
   </script>
     
