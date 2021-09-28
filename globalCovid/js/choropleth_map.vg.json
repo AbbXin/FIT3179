@@ -12,7 +12,7 @@
       "lookup": "properties.NAME",
       "from": {
         "data": {
-          "url": "https://raw.githubusercontent.com/AbbXin/FIT3179/main/globalCovid/data/People_Fully_Vaccinated_Per_Hundred.csv"
+          "url": "https://raw.githubusercontent.com/KaneSec/vega_lite/main/0_students_questions/data/People_Fully_Vaccinated_Per_Hundred.csv"
         },
         "key": "Country",
         "fields": ["people_fully_vaccinated_per_hundred"]
