@@ -13,13 +13,17 @@
 </head>
 <body>
   <div id="choropleth_map"></div>
+  <div id="scatterplot"></div>
+
   <script type="text/javascript">
 
-  
-
     var vg_1 = "js/choropleth_map.vg.json";
+    var vg_2 = "js/scatterplot.vg.json"
     vegaEmbed('#choropleth_map', vg_1).then(function(result) {
     }).catch(console.error);
+    vegaEmbed('#scatterplot', vg_2).then(function(result) {
+    }).catch(console.error);
+
 
 </script>
     
