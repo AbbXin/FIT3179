@@ -19,9 +19,9 @@
 
     var vg_1 = "js/choropleth_map.vg.json";
     var vg_2 = "js/scatterplot.vg.json"
-    vegaEmbed('#choropleth_map', vg_1).then(function(result) {
+    vegaEmbed('#choropleth_map', vg_1, {"actions":false}).then(function(result) {
     }).catch(console.error);
-    vegaEmbed('#scatterplot', vg_2).then(function(result) {
+    vegaEmbed('#scatterplot', vg_2,{"actions":false}).then(function(result) {
     }).catch(console.error);
 
 

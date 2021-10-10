@@ -1,10 +1,10 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "People Fully Vaccinated Per Hundred",
+  "title": "People Fully Vaccinated Per Hundred(15 Aug 2021)",
   "width": 800,
   "height": 600,
   "data": {
-    "url": "https://raw.githubusercontent.com/KaneSec/vega_lite/main/3_choropleth_map/js/ne_110m_admin_0_countries.topojson",
+    "url": "https://raw.githubusercontent.com/AbbXin/FIT3179/main/globalCovid/js/ne_110m_admin_0_countries.topojson",
     "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}
   },
   "transform": [
@@ -12,9 +12,9 @@
       "lookup": "properties.NAME_LONG",
       "from": {
         "data": {
-          "url": "https://raw.githubusercontent.com/KaneSec/vega_lite/main/0_students_questions/data/People_Fully_Vaccinated_Per_Hundred.csv"
+          "url": "https://raw.githubusercontent.com/AbbXin/FIT3179/main/globalCovid/data/owid-covid-latest.csv"
         },
-        "key": "Country",
+        "key": "location",
         "fields": ["people_fully_vaccinated_per_hundred"]
       }
     },
@@ -31,5 +31,12 @@
       {"field": "properties.NAME", "type": "nominal", "title": "Country"},
       {"field": "people_fully_vaccinated_per_hundred", "type": "quantitative","format":".2f"}
     ]
+  },
+  "config": {
+    "style":{
+      "cell":{
+        "stroke":"transparent"
+      }
+    }
   }
 }
