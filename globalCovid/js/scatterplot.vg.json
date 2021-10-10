@@ -1,165 +1,167 @@
 {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": 800,
-    "height": 600,
-    "title": "COVID-19 Cases per Country (8 Oct 2021)",
-    "data": {
-      "url": "https://raw.githubusercontent.com/AbbXin/FIT3179/main/globalCovid/data/owid-covid-latest_exWorld_excontinent.csv"
-    },
-    "params": [
-      {
-        "name": "Population_Above",
-        "value": 0,
-        "bind": {
-          "input": "range",
-          "min": 0,
-          "max": 100000000,
-          "step": 1000000,
-          "name": "Minimum Population: "
-        }
-      },
-      {
-        "name": "Continent_selection",
-        "bind": {
-          "input": "select",
-          "options": [
-            null,
-            "North America",
-            "South America",
-            "Europe",
-            "Africa",
-            "Asia",
-            "Oceania"
-          ],
-          "labels": [
-            "Show All",
-            "North America",
-            "South America",
-            "Europe",
-            "Africa",
-            "Asia",
-            "Oceania"
-          ],
-          "name": "Continent Selection: "
-        }
-      }
-    ],
-    "transform": [
-      {"filter": "datum.total_cases > 0"},
-      {"filter": "datum.total_deaths > 0"},
-      {"filter": "datum.population > Population_Above"},
-      {
-        "filter": "Continent_selection == null || datum.continent ==  Continent_selection"
-      }
-    ],
-    "encoding": {
-      "x": {
-        "field": "total_cases",
-        "type": "quantitative",
-        "title": "Total Confirmed Cases",
-        "axis": {"tickCount": 7},
-        "scale": {"type": "log", "domain": [1, 100000000]}
-      },
-      "y": {
-        "field": "total_deaths",
-        "type": "quantitative",
-        "title": "Total Deaths",
-        "axis": {"tickCount": 6},
-        "scale": {"type": "log", "domain": [1, 10000000]}
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 800,
+  "height": 600,
+  "title": "COVID-19 fully vaccinated VS total deaths per Country (8 Oct 2021)",
+  "data": {
+    "url": "https://raw.githubusercontent.com/AbbXin/FIT3179/main/globalCovid/data/owid-covid-latest_exWorld_excontinent.csv"
+  },
+  "params": [
+    {
+      "name": "Population_Above",
+      "value": 0,
+      "bind": {
+        "input": "range",
+        "min": 0,
+        "max": 100000000,
+        "step": 1000000,
+        "name": "Minimum Population: "
       }
     },
-    "layer": [
-      {
-        "selection": {
-          "continent_highlight": {
-            "type": "multi",
-            "fields": ["continent"],
-            "bind": "legend"
+    {
+      "name": "Continent_selection",
+      "bind": {
+        "input": "select",
+        "options": [
+          null,
+          "North America",
+          "South America",
+          "Europe",
+          "Africa",
+          "Asia",
+          "Oceania"
+        ],
+        "labels": [
+          "Show All",
+          "North America",
+          "South America",
+          "Europe",
+          "Africa",
+          "Asia",
+          "Oceania"
+        ],
+        "name": "Continent Selection: "
+      }
+    }
+  ],
+  "transform": [
+    {"filter": "datum.people_fully_vaccinated > 0"},
+    {"filter": "datum.total_deaths > 0"},
+    {"filter": "datum.population > Population_Above"},
+    {
+      "filter": "Continent_selection == null || datum.continent ==  Continent_selection"
+    }
+  ],
+  "encoding": {
+    "x": {
+      "field": "people_fully_vaccinated",
+      "type": "quantitative",
+      "title": "People fully vaccinated",
+      "axis": {"tickCount": 7},
+      "scale": {"type": "log", "domain": [1, 10000000000]}
+    },
+    "y": {
+      "field": "total_deaths",
+      "type": "quantitative",
+      "title": "Total Deaths",
+      "axis": {"tickCount": 6},
+      "scale": {"type": "log", "domain": [1, 10000000]}
+    }
+  },
+  "layer": [
+    {
+      "selection": {
+        "continent_highlight": {
+          "type": "multi",
+          "fields": ["continent"],
+          "bind": "legend"
+        }
+      },
+      "mark": "circle",
+      "encoding": {
+        "size": {
+          "field": "population",
+          "type": "quantitative",
+          "scale": {
+            "type": "threshold",
+            "domain": [1000000, 10000000, 50000000, 100000000, 500000000],
+            "range": [10, 50, 150, 200, 300, 400]
+          },
+          "legend": {"format": ".1s"}
+        },
+        "color": {
+          "field": "continent",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "North America",
+              "South America",
+              "Europe",
+              "Africa",
+              "Asia",
+              "Oceania"
+            ],
+            "range": [
+              "#e41a1c",
+              "#984ea3",
+              "#ff7f00",
+              "#a6cee3",
+              "#377eb8",
+              "#a65628"
+            ]
           }
         },
-        "mark": "circle",
-        "encoding": {
-          "size": {
-            "field": "population",
-            "type": "quantitative",
-            "scale": {
-              "type": "threshold",
-              "domain": [1000000, 10000000, 50000000, 100000000, 500000000],
-              "range": [10, 50, 150, 200, 300, 400]
-            },
-            "legend": {"format": ".1s"}
-          },
-          "color": {
-            "field": "continent",
-            "type": "nominal",
-            "scale": {
-              "domain": [
-                "North America",
-                "South America",
-                "Europe",
-                "Africa",
-                "Asia",
-                "Oceania"
-              ],
-              "range": [
-                "#e41a1c",
-                "#984ea3",
-                "#ff7f00",
-                "#a6cee3",
-                "#377eb8",
-                "#a65628"
-              ]
-            }
-          },
-          "opacity": {
-            "condition": {"selection": "continent_highlight", "value": 0.8},
-            "value": 0.1
-          },
-          "tooltip": [
-            {"field": "location", "type": "nominal"},
-            {"field": "total_cases", "type": "quantitative", "format": ","},
-            {"field": "new_cases", "type": "quantitative", "format": ","},
-            {"field": "total_deaths", "type": "quantitative", "format": ","},
-            {"field": "new_deaths", "type": "quantitative", "format": ","},
-            {
-              "field": "total_cases_per_million",
-              "type": "quantitative",
-              "format": ".2f"
-            }
-          ]
-        }
-      },
-      {
-        "mark": {
-          "type": "text",
-          "align": "right",
-          "baseline": "middle",
-          "dx": -12,
-          "fontSize": 12
+        "opacity": {
+          "condition": {"selection": "continent_highlight", "value": 0.8},
+          "value": 0.1
         },
-        "encoding": {
-          "text": {"field": "location", "type": "nominal"},
-          "color": {"value": "black"},
-          "opacity": {
-            "condition": {
-              "test": "datum['location'] == 'China' || datum['location'] == 'Singapore' || datum['location'] == 'Australia' || datum['location'] == 'New Zealand' || datum['location'] == 'Japan' || datum['location'] == 'United Kingdom' ||  datum['location'] == 'United States'||  datum['location'] == 'Canada'",
-              "value": 1
-            },
-            "value": 0
-          },
-          "tooltip": [
-            {"field": "location", "type": "nominal"},
-            {"field": "total_cases", "type": "quantitative", "format": ","},
-            {"field": "new_cases", "type": "quantitative", "format": ","},
-            {"field": "total_deaths", "type": "quantitative", "format": ","},
-            {"field": "new_deaths", "type": "quantitative", "format": ","},
-            {
-              "field": "total_cases_per_million",
-              "type": "quantitative",
-              "format": ".2f"
-            }
-          ]
-        }
+        "tooltip": [
+          {"field": "location", "type": "nominal"},
+          {"field": "total_cases", "type": "quantitative", "format": ","},
+          {"field": "new_cases", "type": "quantitative", "format": ","},
+          {"field": "total_deaths", "type": "quantitative", "format": ","},
+          {"field": "new_deaths", "type": "quantitative", "format": ","},
+          {
+            "field": "people_fully_vaccinated_per_hundred",
+            "title": "fully vaccinated per hundred",
+            "type": "quantitative",
+            "format": ".2f"
+          }
+        ]
       }
-    ]
-  }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "right",
+        "baseline": "middle",
+        "dx": -12,
+        "fontSize": 12
+      },
+      "encoding": {
+        "text": {"field": "location", "type": "nominal"},
+        "color": {"value": "black"},
+        "opacity": {
+          "condition": {
+            "test": "datum['location'] == 'China' || datum['location'] == 'Singapore' || datum['location'] == 'Australia' || datum['location'] == 'New Zealand' || datum['location'] == 'Japan' || datum['location'] == 'United Kingdom' ||  datum['location'] == 'United States'||  datum['location'] == 'Canada'",
+            "value": 1
+          },
+          "value": 0
+        },
+        "tooltip": [
+          {"field": "location", "type": "nominal"},
+          {"field": "total_cases", "type": "quantitative", "format": ","},
+          {"field": "new_cases", "type": "quantitative", "format": ","},
+          {"field": "total_deaths", "type": "quantitative", "format": ","},
+          {"field": "new_deaths", "type": "quantitative", "format": ","},
+          {
+            "field": "people_fully_vaccinated_per_hundred",
+            "type": "quantitative",
+            "title": "fully vaccinated per hundred",
+            "format": ".2f"
+          }
+        ]
+      }
+    }
+  ]
+}
