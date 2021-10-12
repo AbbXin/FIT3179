@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "People Fully Vaccinated Per Hundred(15 Aug 2021)",
+  "title": "People Fully Vaccinated Per Hundred(8 Oct 2021)",
   "width": 800,
   "height": 600,
   "data": {
