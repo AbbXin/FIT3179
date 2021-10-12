@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 800,
+  "width": 700,
   "height": 600,
   "title": "COVID-19 fully vaccinated VS total deaths per Country (8 Oct 2021)",
   "data": {
@@ -65,7 +65,7 @@
       "type": "quantitative",
       "title": "Total Deaths",
       "axis": {"tickCount": 6},
-      "scale": {"type": "log", "domain": [1, 10000000]}
+      "scale": {"type": "log", "domain": [1, 1000000]}
     }
   },
   "layer": [
