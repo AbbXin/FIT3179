@@ -15,14 +15,26 @@
 <body>
   <div id="choropleth_map"></div>
   <div id="scatterplot"></div>
+  <div id="bar_chart_1"></div>
+  <div id="bar_chart_2"></div>
 
   <script type="text/javascript">
 
     var vg_1 = "js/choropleth_map.vg.json";
-    var vg_2 = "js/scatterplot.vg.json"
+    var vg_2 = "js/scatterplot.vg.json";
+    var vg_3 = "js/bar_chart_1.vg.json";
+    var vg_4 = "js/bar_chart_2.vg.json"
+
     vegaEmbed('#choropleth_map', vg_1, {"actions":false}).then(function(result) {
     }).catch(console.error);
+
     vegaEmbed('#scatterplot', vg_2,{"actions":false}).then(function(result) {
+    }).catch(console.error);
+
+    vegaEmbed('#bar_chart_1', vg_3,{"actions":false}).then(function(result) {
+    }).catch(console.error);
+
+    vegaEmbed('#bar_chart_2', vg_4,{"actions":false}).then(function(result) {
     }).catch(console.error);
 
 
