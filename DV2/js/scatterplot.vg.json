@@ -118,9 +118,7 @@
         "tooltip": [
           {"field": "location", "type": "nominal"},
           {"field": "total_cases", "type": "quantitative", "format": ","},
-          {"field": "new_cases", "type": "quantitative", "format": ","},
           {"field": "total_deaths", "type": "quantitative", "format": ","},
-          {"field": "new_deaths", "type": "quantitative", "format": ","},
           {
             "field": "people_fully_vaccinated_per_hundred",
             "title": "fully vaccinated per hundred",
@@ -151,9 +149,7 @@
         "tooltip": [
           {"field": "location", "type": "nominal"},
           {"field": "total_cases", "type": "quantitative", "format": ","},
-          {"field": "new_cases", "type": "quantitative", "format": ","},
           {"field": "total_deaths", "type": "quantitative", "format": ","},
-          {"field": "new_deaths", "type": "quantitative", "format": ","},
           {
             "field": "people_fully_vaccinated_per_hundred",
             "type": "quantitative",

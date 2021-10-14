@@ -18,14 +18,15 @@
         "fields": ["people_fully_vaccinated_per_hundred"]
       }
     },
-    {"calculate": "datum.people_fully_vaccinated_per_hundred*1", "as": "people fully vaccinated per hundred"}
+    {"calculate": "datum.people_fully_vaccinated_per_hundred*100", "as": "people fully vaccinated per hundred"}
   ],
   "projection": {"type": "equirectangular"},
-  "mark": {"type": "geoshape"},
+  "mark": {"type": "geoshape","stroke": "lightgrey"},
   "encoding": {
     "color": {
       "field": "people fully vaccinated per hundred",
-      "type": "quantitative"
+      "type": "quantitative",
+      "scale": {"type": "linear"}
     },
     "tooltip": [
       {"field": "properties.NAME", "type": "nominal", "title": "Country"},
