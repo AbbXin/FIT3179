@@ -1,0 +1,44 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "People Fully Vaccinated Per Hundred(8 Oct 2021)",
+  "width": 600,
+  "height": 250,
+  "data": {
+    "url": "https://raw.githubusercontent.com/AbbXin/FIT3179/main/globalCovid/js/ne_110m_admin_0_countries.topojson",
+    "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}
+  },
+  "transform": [
+    {
+      "lookup": "properties.NAME",
+      "from": {
+        "data": {
+          "url": "https://raw.githubusercontent.com/AbbXin/FIT3179/main/globalCovid/data/owid-covid-latest.csv"
+        },
+        "key": "location",
+        "fields": ["people_fully_vaccinated_per_hundred"]
+      }
+    },
+    {"calculate": "datum.people_fully_vaccinated_per_hundred*100", "as": "people fully vaccinated per hundred"}
+  ],
+  "projection": {"type": "equirectangular"},
+  "mark": {"type": "geoshape","stroke": "lightgrey"},
+  "encoding": {
+    "color": {
+      "field": "people fully vaccinated per hundred",
+      "type": "quantitative",
+      "scale": {"type": "linear"}
+    },
+    "tooltip": [
+      {"field": "properties.NAME", "type": "nominal", "title": "Country"},
+      {"field": "people_fully_vaccinated_per_hundred", "type": "quantitative","format":".2f","title":"Vaccinated per hundred"},
+      {"field": "total_deaths_per_million", "type": "quantitative","format":".2f","title":"Total deaths per million"}
+    ]
+  },
+  "config": {
+    "style":{
+      "cell":{
+        "stroke":"transparent"
+      }
+    }
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Daily deaths",
+  "data": {"url": "https://raw.githubusercontent.com/AbbXin/FIT3179/main/DV2/data/counrty_daily_deaths.csv"},
+  "width": 600,
+  "height": 300,
+  "params":[ {
+    "name": "country_selection",
+    "bind": {
+    "input": "select", 
+    "options": [
+      null,
+      "Australia",
+      "China", 
+      "Indonesia", 
+      "Japan", 
+      "Portugal",
+      "Spain",
+      "Turkey",
+      "UK",
+      "US"
+], 
+    "labels":[
+      "Show All", 
+      "Australia",
+      "China", 
+      "Indonesia", 
+      "Japan", 
+      "Portugal",
+      "Spain",
+      "Turkey",
+      "UK",
+      "US"
+],
+"name": "Country Selection: " }
+} ],
+"transform": [
+  {"filter": "country_selection == null || datum.country == country_selection"}
+
+],
+
+  "mark": "area",
+  "encoding": {
+      "x": {"field": "date", "type": "temporal","title":"Date"},
+      "y": {"field": "daily", "type": "quantitative","title":"daily deaths count"},
+      "color": {"field": "country", "type": "nominal","title":"Country"},
+      "tooltip": [
+          {"field": "country", "type": "nominal","title":"Country"},
+          {"field":"date","type":"temporal","title":"Date"},
+          {"field": "daily", "type": "quantitative", "format": ",","title":"Daily death"}       
+        ]
+    }
+}
