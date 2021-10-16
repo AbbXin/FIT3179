@@ -1,10 +1,10 @@
 ﻿continent,location,total_cases,total_deaths,total_cases_per_million,total_deaths_per_million,people_fully_vaccinated_per_hundred
-Oceania,Australia,125081,1421,4850.316,55.103,49.32
+Europe,United Kingdom,8119442,137945,119040.984,2022.443,66.13
+Europe,Spain,4973619,86778,106398.471,1856.404,78.73
 North America,Canada,1663716,28239,43703.893,741.806,71.88
 South America,Chile,1660372,37542,86422.065,1954.054,73.95
-Asia,China,96451,4636,66.784,3.21,72.56
-Europe,Ireland,399833,5280,80240.96,1059.623,74.2
 Europe,Portugal,1074109,18027,105637.012,1772.928,85.85
-Europe,Spain,4973619,86778,106398.471,1856.404,78.73
-Europe,United Kingdom,8119442,137945,119040.984,2022.443,66.13
+Europe,Ireland,399833,5280,80240.96,1059.623,74.2
 South America,Uruguay,389817,6062,111850.789,1739.379,74.48
+Oceania,Australia,125081,1421,4850.316,55.103,49.32
+Asia,China,96451,4636,66.784,3.21,72.56

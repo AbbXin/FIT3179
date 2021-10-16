@@ -1,35 +1,120 @@
 <!DOCTYPE html>
 <html>
 <head>  
+  <title>Effect of vaccines on Covid-19</title>
    <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
    <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
 
-    <!-- CSS file -->
-    <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
-    <h1>Effect of vaccines on Covid-19</h1>
+  <!-- Import pure.css -->
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css" integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <!-- Google font -->
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700;900&display=swap" rel="stylesheet">
+
+  <!-- CSS file -->
+  <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
 
 </head>
 <body>
-  <div id="choropleth_map"></div>
-  <div id="choropleth_map_2"></div>
-  <div id="scatterplot"></div>
-  <div id="area_chart_3"></div>
+  <div class="page">
+    <div>
+      <h1>Explore the impact of vaccines on COVID-19</h1>
+    </div>
+
+    <div>
+      <h2>Explore the impact of vaccines on COVID-19</h2>
+    </div>
+
+    <!-- pure grid group -->
+    <div class="pure-g">
+      <div class="pure-u-5-12">
+        <div class="description description-right">
+          <h2>This is the first section</h2>
+          <p>The first column is used for description while the next two columns are merged and used for visualisation. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Massa sapien faucibus et molestie ac feugiat sed. </p>
+        </div>
+      </div>
+      <div class="pure-u-7-12">
+        <div id="choropleth_map" class="vis-container1"></div>
+      </div>
+    </div>
+    <!-- end pure grid group -->
+
+
+    <!-- pure grid group -->
+    <div class="pure-g">
+      <div class="pure-u-7-12">
+        <div id="choropleth_map_2" class="vis-container1"></div>
+      </div>
+      <div class="pure-u-5-12">
+        <div class="description description-left">
+          <h2>This is the second section</h2>
+          <p>The first column is used for description while the next two columns are merged and used for visualisation. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Massa sapien faucibus et molestie ac feugiat sed. </p>
+        </div>
+      </div>
+    </div>
+    <!-- end pure grid group -->
+
+    <div>
+      <h2>Explore the impact of vaccines on COVID-19</h2>
+    </div>
+
+    <!-- pure grid group -->
+    <div class="pure-g">
+      <div class="pure-u-1-1">
+        <div id="scatterplot" class="vis-container1"></div>
+      </div>
+    </div>
+     <!-- end pure grid group -->
+
+
+    <!-- pure grid group -->
+    <div class="pure-g">
+      <div class="pure-u-1-1">
+        <div class="description description-bottom">
+          <p>The first column is used for description while the next two columns are merged and used for visualisation. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Massa sapien faucibus et molestie ac feugiat sed. </p>
+        </div>
+      </div>
+    </div>
+    <!-- end pure grid group -->
+
+    <div>
+      <h2>Explore the impact of vaccines on COVID-19</h2>
+    </div>
+
+    <!-- pure grid group -->
+    <div class="pure-g">
+      <div class="pure-u-1-1">
+        <div id="area_chart_3" class="vis-container1"></div>
+      </div>
+    </div>
+     <!-- end pure grid group -->
+
+     <!-- pure grid group -->
+    <div class="pure-g">
+      <div class="pure-u-1-1">
+        <div class="description description-bottom">
+          <p>The first column is used for description while the next two columns are merged and used for visualisation. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Massa sapien faucibus et molestie ac feugiat sed. </p>
+        </div>
+      </div>
+    </div>
+    <!-- end pure grid group -->
+
+
+  </div>  <!-- end page -->
+
   <div id="bar_chart_1"></div>
   <div id="bar_chart_2"></div>
 
-
   <script type="text/javascript">
-
     var vg_1 = "js/choropleth_map.vg.json";
     var vg_2 = "js/choropleth_map_2.vg.json";
     var vg_3 = "js/scatterplot.vg.json";
     var vg_4 = "js/area_chart_3.vg.json";
     var vg_5 = "js/bar_chart_1.vg.json";
     var vg_6 = "js/bar_chart_2.vg.json";
-
 
     vegaEmbed('#choropleth_map', vg_1, {"actions":false}).then(function(result) {
     }).catch(console.error);
@@ -48,9 +133,6 @@
 
     vegaEmbed('#bar_chart_2', vg_6,{"actions":false}).then(function(result) {
     }).catch(console.error);
-
-    
-
 
 </script>
     
