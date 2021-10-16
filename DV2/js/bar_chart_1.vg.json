@@ -1,26 +1,37 @@
 {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": "Positive cases per million in countries with high vaccination rate",
-    "data": {"url": "https://raw.githubusercontent.com/AbbXin/FIT3179/main/globalCovid/data/high_vaccine_death_confirmed.csv"},
-    "width": 400,
-    "height": 600,
-    "mark": "bar",
-    "encoding": {
-      "y": {
-        "field": "location",
-        "type":"nominal",
-        "sort":"-x"
-      },
-      "x": {
-        "field": "total_cases_per_million",
-        "type":"quantitative",
-        "title": "Total Confirmed Cases per million"
-      },
-      "tooltip": [
-        {"field": "location", "type": "nominal", "title": "Country"},
-        {"field": "people_fully_vaccinated_per_hundred", "type": "quantitative", "title": "fully vaccinated per hundred"},
-        {"field": "total_cases_per_million", "type": "quantitative","format":".2f","title":"total cases per million"},
-        {"field": "total_deaths_per_million", "type": "quantitative","format":".2f","title":"total deaths per million"}
-      ]
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Positive Cases",
+  "data": {"url": "https://raw.githubusercontent.com/AbbXin/FIT3179/main/DV2/data/high_vaccine_death_confirmed.csv"},
+
+  "width": 200,
+  "height": 400,
+  "mark": "bar",
+  "encoding": {
+    "y": {
+      "field": "location",
+      "type":"nominal",
+      "sort":"-x",
+      "axis": {"grid": false,"domain":false,"ticks": false},
+      "title":false
+    },
+    "x": {
+      "field": "total_cases",
+      "type":"quantitative",
+       "axis": {"grid": false,"domain":false,"ticks": false},
+      "title": false
+    }, "color": {"field": "location", "type": "nominal","title":"Country"},
+    "tooltip": [
+      {"field": "location", "type": "nominal", "title": "Country"},
+      {"field": "people_fully_vaccinated_per_hundred", "type": "quantitative", "title": "Vaccinated per hundred"},
+      {"field": "total_cases", "type": "quantitative","title":"Total Cases"},
+      {"field": "total_deaths", "type": "quantitative","title":"Total Deaths"}
+    ]
+  },
+  "config": {
+      "style":{
+        "cell":{
+          "stroke":"transparent"
+        }
+      }
     }
-  }
+}

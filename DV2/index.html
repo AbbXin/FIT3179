@@ -16,36 +16,37 @@
   <div id="choropleth_map"></div>
   <div id="choropleth_map_2"></div>
   <div id="scatterplot"></div>
+  <div id="area_chart_3"></div>
   <div id="bar_chart_1"></div>
   <div id="bar_chart_2"></div>
-  <div id="area_chart_1"></div>
+
 
   <script type="text/javascript">
 
     var vg_1 = "js/choropleth_map.vg.json";
-    var vg_2 = "js/scatterplot.vg.json";
-    var vg_3 = "js/bar_chart_1.vg.json";
-    var vg_4 = "js/bar_chart_2.vg.json";
-    var vg_5 = "js/area_chart_1.vg.json";
-    var vg_6 = "js/choropleth_map_2.vg.json";
+    var vg_2 = "js/choropleth_map_2.vg.json";
+    var vg_3 = "js/scatterplot.vg.json";
+    var vg_4 = "js/area_chart_3.vg.json";
+    var vg_5 = "js/bar_chart_1.vg.json";
+    var vg_6 = "js/bar_chart_2.vg.json";
 
 
     vegaEmbed('#choropleth_map', vg_1, {"actions":false}).then(function(result) {
     }).catch(console.error);
 
-    vegaEmbed('#choropleth_map_2', vg_6,{"actions":false}).then(function(result) {
+    vegaEmbed('#choropleth_map_2', vg_2,{"actions":false}).then(function(result) {
     }).catch(console.error);
 
-    vegaEmbed('#scatterplot', vg_2,{"actions":false}).then(function(result) {
+    vegaEmbed('#scatterplot', vg_3,{"actions":false}).then(function(result) {
     }).catch(console.error);
 
-    vegaEmbed('#bar_chart_1', vg_3,{"actions":false}).then(function(result) {
+    vegaEmbed('#area_chart_3', vg_4,{"actions":false}).then(function(result) {
     }).catch(console.error);
 
-    vegaEmbed('#bar_chart_2', vg_4,{"actions":false}).then(function(result) {
+    vegaEmbed('#bar_chart_1', vg_5,{"actions":false}).then(function(result) {
     }).catch(console.error);
 
-    vegaEmbed('#area_chart_1', vg_5,{"actions":false}).then(function(result) {
+    vegaEmbed('#bar_chart_2', vg_6,{"actions":false}).then(function(result) {
     }).catch(console.error);
 
     
