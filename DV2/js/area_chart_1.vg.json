@@ -11,26 +11,26 @@
     "options": [
       null,
       "Australia",
+      "Canada",
+      "Chile", 
       "China", 
-      "Indonesia", 
-      "Japan", 
+      "Ireland", 
       "Portugal",
       "Spain",
-      "Turkey",
       "UK",
-      "US"
+      "Uruguay"
 ], 
     "labels":[
       "Show All", 
       "Australia",
+      "Canada",
+      "Chile", 
       "China", 
-      "Indonesia", 
-      "Japan", 
+      "Ireland", 
       "Portugal",
       "Spain",
-      "Turkey",
       "UK",
-      "US"
+      "Uruguay"
 ],
 "name": "Country Selection: " }
 } ],
