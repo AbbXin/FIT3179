@@ -14,7 +14,7 @@
         "min": 0,
         "max": 10000000,
         "step": 10000,
-        "name": "Minimum Comfirmed: "
+        "name": "Minimum Comfirmed Cases: "
       }
     },
     {
@@ -103,12 +103,12 @@
               "Oceania"
             ],
             "range": [
-              "#e41a1c",
-              "#984ea3",
-              "#ff7f00",
-              "#a6cee3",
-              "#377eb8",
-              "#a65628"
+              "#8dd3c7",
+              "#e34a33",
+              "#bebada",
+              "#fb8072",
+              "#80b1d3",
+              "#fdb462"
             ]
           }
         },

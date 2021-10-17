@@ -1,6 +1,7 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": 480,
+    "title":"Death per million in the world",
+    "width": 450,
     "height": 230,
     "data": {
       "url": "https://raw.githubusercontent.com/AbbXin/FIT3179/main/globalCovid/js/ne_110m_admin_0_countries.topojson",
@@ -17,7 +18,8 @@
           "fields": ["total_deaths_per_million","people_fully_vaccinated_per_hundred"]
         }
       },
-      {"calculate": "datum.total_deaths_per_million*100", "as": "Total Deaths per million"}
+      {"calculate": "datum.total_deaths_per_million*1", "as": "Total Deaths per million"},
+      {"calculate": "datum.people_fully_vaccinated_per_hundred/100", "as": "Vaccinated_rate"}
     ],
     "projection": {"type": "equirectangular"},
     "mark": {"type": "geoshape","stroke": "lightgrey"},
@@ -30,7 +32,7 @@
       },
       "tooltip": [
         {"field": "properties.NAME", "type": "nominal", "title": "Country"},
-        {"field": "people_fully_vaccinated_per_hundred", "type": "quantitative","format":".2f","title":"Vaccinated per hundred"},
+        {"field": "Vaccinated_rate", "type": "quantitative","format":"%","title":"Vaccinated rate"},
         {"field": "total_deaths_per_million", "type": "quantitative","format":".2f","title":"Total deaths per million"}
       ]
     },
