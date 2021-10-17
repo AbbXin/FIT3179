@@ -23,8 +23,7 @@
         "Ireland", 
         "Portugal",
         "Spain",
-        "United Kingdom",
-        "Uruguay"
+        "United Kingdom"
   ], 
       "labels":[
         "Show All", 
@@ -35,8 +34,7 @@
         "Ireland", 
         "Portugal",
         "Spain",
-        "United Kingdom",
-        "Uruguay"
+        "United Kingdom"
   ],
   "name": "Country Selection: " }
   } ],

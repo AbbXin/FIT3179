@@ -53,18 +53,20 @@
   ],
   "encoding": {
     "x": {
-      "field": "people_fully_vaccinated",
-      "type": "quantitative",
-      "title": "Number of People Fully Vaccinated",
-      "axis": {"tickCount": 7,"grid": false,"ticks": false},
-      "scale": {"type": "log", "domain": [1, 10000000000]}
-    },
-    "y": {
       "field": "total_deaths",
       "type": "quantitative",
       "title": "Total Deaths",
       "axis": {"tickCount": 6,"grid": false,"ticks": false},
       "scale": {"type": "log", "domain": [1, 1000000]}
+     
+    },
+    "y": {
+      "field": "people_fully_vaccinated",
+      "type": "quantitative",
+      "title": "Number of People Fully Vaccinated",
+      "axis": {"tickCount": 7,"grid": false,"ticks": false},
+      "scale": {"type": "log", "domain": [1, 10000000000]}
+      
     }
   },
   "layer": [
@@ -114,7 +116,7 @@
           }
         },
         "opacity": {
-          "condition": {"selection": "continent_highlight", "value": 0.8},
+          "condition": {"selection": "continent_highlight", "value": 1},
           "value": 0.1
         },
         "tooltip": [
@@ -135,16 +137,16 @@
         "type": "text",
         "align": "right",
         "baseline": "middle",
-        "dx": -10,
+        "dx": -2,
         "fontSize": 10,
-        "fontWeight":"bold"
+        "fontWeight":"normal"
       },
       "encoding": {
         "text": {"field": "location", "type": "nominal"},
         "color": {"value": "black"},
         "opacity": {
           "condition": {
-            "test": "datum['location'] == 'China' || datum['location'] == 'Canada' || datum['location'] == 'Australia' || datum['location'] == 'Chile' || datum['location'] == 'Ireland' || datum['location'] == 'United Kingdom' ||  datum['location'] == 'United States'||  datum['location'] == 'Portugal'||  datum['location'] == 'Spain'||  datum['location'] == 'Uruguay'",
+            "test": "datum['location'] == 'China' || datum['location'] == 'Canada' || datum['location'] == 'Australia' || datum['location'] == 'Chile' || datum['location'] == 'Ireland' || datum['location'] == 'United Kingdom' ||  datum['location'] == 'United States'||  datum['location'] == 'Portugal'",
             "value": 1
           },
           "value": 0
