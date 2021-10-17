@@ -55,7 +55,7 @@
     "x": {
       "field": "people_fully_vaccinated",
       "type": "quantitative",
-      "title": "People fully vaccinated",
+      "title": "Number of People Fully Vaccinated",
       "axis": {"tickCount": 7,"grid": false,"ticks": false},
       "scale": {"type": "log", "domain": [1, 10000000000]}
     },
@@ -87,12 +87,13 @@
             "domain": [1000, 300000, 1000000, 1000000, 10000000],
             "range": [10, 50, 150, 250,350,450]
           },
-          "legend": {"format": ".1s"}
+          "legend": {"format": ".1s","labelFontSize":11,"titleFontSize":13}
         },
         "color": {
           "field": "continent",
           "type": "nominal",
           "title":"Continent",
+          "legend":{"labelFontSize":11,"titleFontSize":13},
           "scale": {
             "domain": [
               "North America",

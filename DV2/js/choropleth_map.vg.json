@@ -1,15 +1,14 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title":"Vaccination rate in the world",
   "width": 450,
   "height": 230,
   "data": {
-    "url": "https://raw.githubusercontent.com/AbbXin/FIT3179/main/globalCovid/js/ne_110m_admin_0_countries.topojson",
-    "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}
+    "url": "https://raw.githubusercontent.com/AbbXin/FIT3179/main/DV2/js/custom.geo.json",
+    "format": {"type": "topojson", "feature": "custom.geo"}
   },
   "transform": [
     {
-      "lookup": "properties.NAME",
+      "lookup": "properties.name",
       "from": {
         "data": {
           "url": "https://raw.githubusercontent.com/AbbXin/FIT3179/main/globalCovid/data/owid-covid-latest.csv"
@@ -28,11 +27,11 @@
       "field": "Vaccinated per hundred",
       "type": "quantitative",
       "scale": {"shceme": "darkblues"},
-      "legend":null
+      "legend": {"direction": "horizontal","orient":"bottom","offset":-25}
     },
     "tooltip": [
-      {"field": "properties.NAME", "type": "nominal", "title": "Country"},
-      {"field": "Vaccinated_rate", "type": "quantitative","format":"%","title":"Vaccinated rate"},
+      {"field": "properties.name", "type": "nominal", "title": "Country"},
+      {"field": "people_fully_vaccinated_per_hundred", "type": "quantitative","format":".2f","title":"Vaccinated rate"},
       {"field": "total_deaths_per_million", "type": "quantitative","format":".2f","title":"Total deaths per million"}
     ]
   },

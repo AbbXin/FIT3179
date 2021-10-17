@@ -17,11 +17,16 @@ p {
   /*font-size: large*/
 }
 body{
-  background-color: whitesmoke;
+
+  background-image:url('vaccine.webp');
+  background-repeat:repeat-y;
+  background-attachment: fixed;  
+  background-size: cover;
+
   }
 .page{
   width: 850px;    
-	background-color: white;   
+	background-color:whitesmoke;   
 	margin: auto;
 	padding: 50px;
 	padding-top: 35px;

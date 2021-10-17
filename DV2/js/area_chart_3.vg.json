@@ -2,7 +2,8 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
     "text":"Daily Deaths & Cases",
-  "anchor":"middle"},
+  "anchor":"middle",
+"fontSize":16},
   "data": {"url": "https://raw.githubusercontent.com/AbbXin/FIT3179/main/DV2/data/new_high_vaccine_daily_case%26deaths.csv"},
   "params":[{
 "name": "country_highlight",
@@ -41,7 +42,7 @@
   } ],
   "spacing": 0,
   "vconcat": [
-    {"width": 620,
+    {"width": 650,
     "height": 150,
     "transform": [
     {"filter": "country_selection == null || datum.country == country_selection"}
@@ -51,7 +52,7 @@
     "encoding": {
         "x": {"field": "date", "type": "temporal","title":"Date","axis":null},
         "y": {"field": "daily case", "type": "quantitative","title":"Cases","axis": {"grid": false,"labels":false,"domain":false,"ticks": false}},
-        "color": {"field": "country", "type": "nominal","title":"Country"},
+        "color": {"field": "country", "type": "nominal","title":"Country","legend":{"labelFontSize":12,"titleFontSize":13}},
         "opacity": {
         "condition": {"param": "country_highlight", "value": 1},
         "value": 0.1
@@ -63,7 +64,7 @@
             {"field": "daily deaths", "type": "quantitative", "format": ",","title":"Daily Deaths"}       
           ]
       }},{
-    "width": 620,
+    "width": 650,
     "height":-2,
     "view": {"stroke": null},
     "mark": {
@@ -74,7 +75,7 @@
       "x": {"timeUnit": "yearmonth","field": "date", "type": "temporal","axis": {"grid": false,"title":false,"domain":false,"ticks": false,"labelFontWeight":"bold","labelAlign":"left"}}
     }
   },
-  {"width": 620,
+  {"width": 650,
   "height": 150,
   "transform": [
   {"filter": "country_selection == null || datum.country == country_selection"}
@@ -83,7 +84,7 @@
   "encoding": {
       "x": {"field": "date", "type": "temporal","title":"Date","axis":null},
       "y": {"field": "life lost", "type": "quantitative","title":"Deaths","axis": {"grid": false,"labels":false,"domain":false,"ticks": false}},
-      "color": {"field": "country", "type": "nominal","title":"Country"},
+      "color": {"field": "country", "type": "nominal","title":"Country","legend":{"labelFontSize":12,"titleFontSize":13}},
       "opacity": {
         "condition": {"param": "country_highlight", "value": 1},
         "value": 0.1
